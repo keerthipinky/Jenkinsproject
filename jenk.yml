@@ -23,7 +23,7 @@ ports:
 apiVersion: v1
 kind: Service
 metadata:
-name: project-service
+name: project
 spec:
 selector:
 app: project
