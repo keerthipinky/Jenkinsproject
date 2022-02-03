@@ -32,9 +32,9 @@ pipeline {
                 echo 'copied'
             }
        }
-
-    }  
-  */
+*/
+      
+  
         
   
      stage('Build and push Docker images..') {
@@ -63,7 +63,7 @@ pipeline {
         sh 'kubectl apply -f jenk.yml'
            }
            }
-    
+ } 
 }
 
 
