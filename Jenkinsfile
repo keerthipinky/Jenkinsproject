@@ -48,8 +48,8 @@ pipeline {
       }
   
   }
- }
-}
+ 
+
 /*
         
         stage('Run ansible'){
@@ -63,7 +63,7 @@ pipeline {
         sh 'kubectl apply -f jenk.yml'
            }
            }
- } 
+}
 }
 
 
