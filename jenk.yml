@@ -16,7 +16,7 @@ app: project
 spec:
 containers:
 - name: project
-image: destroyer616/project
+image: padharthiswetha/project
 ports:
 - containerPort: 8080
 ---
