@@ -63,7 +63,7 @@ pipeline {
         sh 'kubectl apply -f jenk.yml'
            }
            }
-    }
+    
 }
 
 
