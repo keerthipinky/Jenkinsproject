@@ -23,7 +23,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: project-service
+  labels:
+    name: project
 spec:
   selector:
     app: project
