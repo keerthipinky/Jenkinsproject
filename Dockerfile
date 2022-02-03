@@ -1,6 +1,6 @@
-FROM centos
+FROM amazonlinux
 
-MAINTAINER saikiran.reddy916@gmail.com
+MAINTAINER padharthiswetha@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
