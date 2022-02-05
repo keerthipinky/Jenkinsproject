@@ -60,7 +60,11 @@ pipeline {
 */
      stage('Deploy to K8S') {
       steps{
-        sh 'kubectl apply -f jenk.yml'
+          KubernetesDeploy{
+              configs: 'jenk.yml' ,
+              kubeconfigId: 'kubernetes' ,
+                  }
+       //  sh 'kubectl apply -f jenk.yml'  //
            }
      }
 
