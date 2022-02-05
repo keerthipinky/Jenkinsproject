@@ -1,10 +1,10 @@
-FROM amazonlinux
+FROM ubuntu
 
 MAINTAINER padharthiswetha@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
-RUN yum install java unzip -y
+RUN apt install java unzip -y
 
 
 RUN curl -O https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.zip
