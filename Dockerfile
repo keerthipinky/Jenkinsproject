@@ -5,6 +5,8 @@ MAINTAINER padharthiswetha@gmail.com
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
 RUN apt-get update
+RUN add-apt-repository -y ppa:openjdk-r/ppa
+RUN apt-get update
 RUN apt-get install -y java unzip 
 
 
