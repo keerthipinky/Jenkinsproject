@@ -4,8 +4,8 @@ MAINTAINER padharthiswetha@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
-RUN apt-get upgrade -y
-RUN apt-get install java unzip -y
+RUN apt-get update
+RUN apt-get install -y java unzip 
 
 
 RUN curl -O https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.45/bin/apache-tomcat-9.0.45.zip
