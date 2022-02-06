@@ -4,7 +4,7 @@ MAINTAINER padharthiswetha@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
-RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install java unzip -y
 
 
