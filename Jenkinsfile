@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    
+   /* environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub-cred-raja')
+	}
+*/    
+
+    
 
     stages {
        stage('Validate') {
@@ -38,11 +45,14 @@ pipeline {
         
   
      stage('Build and push Docker images..') {
+     environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	    }
       steps{
        sh "sudo docker image build -t $JOB_NAME:v1.$BUILD_ID /var/lib/jenkins/workspace/project/."
        sh "sudo docker image tag $JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:v1.$BUILD_ID"
        sh "sudo docker image tag $JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:latest" 
-       sh "docker login -u padharthiswetha -p ${SWETHA@12345s}"  
+       sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin' 
        sh "sudo docker image push padharthiswetha/$JOB_NAME:v1.$BUILD_ID"
        sh "sudo docker image push padharthiswetha/$JOB_NAME:latest"
        sh "sudo docker image rmi $JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:v1.$BUILD_ID padharthiswetha/$JOB_NAME:latest"
