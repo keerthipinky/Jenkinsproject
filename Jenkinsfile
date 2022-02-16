@@ -1,14 +1,6 @@
 pipeline {
     agent any
-    
-   /* environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
-	}
-*/    
-
-    
-
-    stages {
+     stages {
        stage('Validate') {
             steps {
                 echo 'Validate Code'
