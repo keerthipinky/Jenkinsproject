@@ -4,6 +4,7 @@ MAINTAINER padharthiswetha@gmail.com
 
 WORKDIR /opt
 RUN mkdir /opt/tomcat/
+#RUN apt install java unzip -y
 RUN apt-get update
 RUN apt-get -y install openjdk-8-jdk wget unzip curl
 
