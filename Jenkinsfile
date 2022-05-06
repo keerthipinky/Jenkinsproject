@@ -55,12 +55,12 @@ pipeline {
 
 
         
-        stage('Run ansible'){
+    /*    stage('Run ansible'){
             steps{
                 sh 'ansible-playbook depl.yml'
             }
         }
-
+           */      
      stage('Deploy to K8S') {
       steps{
            sh 'kubectl apply -f jenk.yml'  
